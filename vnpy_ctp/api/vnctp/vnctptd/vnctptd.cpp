@@ -5501,7 +5501,7 @@ void TdApi::processRspQryNotice(Task *task)
 	{
 		CThostFtdcNoticeField *task_data = (CThostFtdcNoticeField*)task->task_data;
 		data["BrokerID"] = toUtf(task_data->BrokerID);
-		data["Content"] = toUtf(task_data->Content);
+		data["Content"] = bytes(task_data->Content);
 		data["SequenceLabel"] = toUtf(task_data->SequenceLabel);
 		delete task_data;
 	}
